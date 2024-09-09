@@ -29,6 +29,12 @@ try {
 app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+
 server.listen(PORT, () => {
     console.log(`Server is Running on port ${PORT}`);
 });
