@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (authUser) {
       //backend url
-      const socket = io("http://localhost:4002", {
+      const socket = io("https://message-talk-backend.onrender.com", {
         query: {
           userId: authUser.user._id,
         },
